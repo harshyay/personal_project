@@ -1,0 +1,14 @@
+# One-click hosting on Render (free plan), so the app works on your phone anywhere.
+# Render dashboard > New > Blueprint > pick this repo. Then set DATABASE_URL.
+services:
+  - type: web
+    name: settle
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: NODE_VERSION
+        value: "20"
